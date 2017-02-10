@@ -1,8 +1,10 @@
 package com.juliazluo.www.memberquiz;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.media.Image;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -10,6 +12,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.Arrays;
 import java.util.HashSet;
@@ -68,6 +71,36 @@ public class GameActivity extends AppCompatActivity {
                 }
             });
         }
+
+        ((Button) findViewById(R.id.quit_btn)).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(GameActivity.this);
+
+                // set title
+                alertDialogBuilder.setTitle("Quit Game");
+
+                // set dialog message
+                alertDialogBuilder
+                        .setMessage("Are you sure you want to quit the game?")
+                        .setCancelable(false)
+                        .setPositiveButton("Yes",new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog,int id) {
+                                Intent intent = new Intent(getApplicationContext(),
+                                        StartActivity.class);
+                                startActivity(intent);
+                            }
+                        })
+                        .setNegativeButton("No",new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog,int id) {
+                                dialog.cancel();
+                            }
+                        });
+
+                AlertDialog alertDialog = alertDialogBuilder.create();
+                alertDialog.show();
+            }
+        });
     }
 
     protected void refreshScreen() {
@@ -97,6 +130,10 @@ public class GameActivity extends AppCompatActivity {
         if (answer == members[memberNum]) {
             score += 1;
             refreshScoreText();
+        } else {
+            String wrongText = "You suck! The correct answer was " + members[memberNum];
+            Toast toast = Toast.makeText(getApplicationContext(), wrongText, Toast.LENGTH_SHORT);
+            toast.show();
         }
     }
 
