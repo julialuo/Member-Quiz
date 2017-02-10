@@ -99,6 +99,7 @@ public class GameActivity extends AppCompatActivity {
                                 Intent intent = new Intent(getApplicationContext(),
                                         StartActivity.class);
                                 startActivity(intent);
+                                count.cancel();
                             }
                         })
                         .setNegativeButton("No",new DialogInterface.OnClickListener() {
