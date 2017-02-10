@@ -5,6 +5,7 @@
     android:id="@+id/activity_start"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background2"
     tools:context="com.juliazluo.www.memberquiz.StartActivity">
 
     <Button
@@ -22,4 +23,20 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         android:layout_marginBottom="16dp" />
+
+    <TextView
+        android:text="READY?"
+        android:layout_width="137dp"
+        android:layout_height="58dp"
+        android:id="@+id/textView"
+        app:layout_constraintBottom_toTopOf="@+id/start_btn"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginRight="16dp"
+        android:layout_marginStart="16dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginLeft="16dp"
+        android:gravity="bottom|center"
+        android:textSize="24sp"/>
 </android.support.constraint.ConstraintLayout>

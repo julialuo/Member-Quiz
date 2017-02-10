@@ -64,9 +64,6 @@ public class GameActivity extends AppCompatActivity {
         choiceBtns[2] = (Button) findViewById(R.id.btn3);
         choiceBtns[3] = (Button) findViewById(R.id.btn4);
 
-        refreshScoreText();
-        refreshScreen();
-
         for (Button button: choiceBtns) {
             button.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -124,7 +121,6 @@ public class GameActivity extends AppCompatActivity {
                 intent.setType(ContactsContract.RawContacts.CONTENT_TYPE);
                 intent.putExtra(ContactsContract.Intents.Insert.NAME, members[memberNum]);
                 startActivity(intent);
-                count.cancel();
                 returnFromContacts = true;
             }
         });
@@ -136,7 +132,16 @@ public class GameActivity extends AppCompatActivity {
         if (returnFromContacts) {
             createTimer(timeMS);
             returnFromContacts = false;
+        } else {
+            refreshScoreText();
+            refreshScreen();
         }
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        count.cancel();
     }
 
     protected void refreshScreen() {
@@ -165,7 +170,7 @@ public class GameActivity extends AppCompatActivity {
     }
 
     protected void checkAnswer(String answer, boolean outOfTime) {
-        if (answer == members[memberNum]) {
+        if (answer.equals(members[memberNum])) {
             score += 1;
             refreshScoreText();
         } else {

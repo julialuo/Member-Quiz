@@ -81,7 +81,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         android:layout_marginLeft="16dp"
         android:textAlignment="center"
-        android:textSize="16dp"/>
+        android:textSize="16sp"/>
 
     <TextView
         android:text="TextView"
@@ -97,14 +97,13 @@
         app:layout_constraintLeft_toLeftOf="parent"
         android:layout_marginLeft="16dp"
         android:textAlignment="center"
-        android:textSize="16dp"/>
+        android:textSize="16sp"/>
 
     <Button
         android:text="Quit"
         android:layout_width="137dp"
         android:layout_height="wrap_content"
         android:id="@+id/quit_btn"
-        android:layout_marginTop="8dp"
         app:layout_constraintTop_toBottomOf="@+id/count_txt"
         android:layout_marginEnd="16dp"
         app:layout_constraintRight_toRightOf="parent"
