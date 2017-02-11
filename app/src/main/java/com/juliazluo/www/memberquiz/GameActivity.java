@@ -3,7 +3,6 @@ package com.juliazluo.www.memberquiz;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.media.Image;
 import android.os.CountDownTimer;
 import android.provider.ContactsContract;
 import android.support.v7.app.AlertDialog;
@@ -17,9 +16,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.Arrays;
-import java.util.HashSet;
 import java.util.Random;
-import java.util.Set;
 
 public class GameActivity extends AppCompatActivity {
 
@@ -34,13 +31,13 @@ public class GameActivity extends AppCompatActivity {
     String[] members = {"Jessica Cherny", "Kevin Jiang", "Jared Gutierrez", "Kristin Ho",
             "Christine Munar", "Mudit Mittal", "Richard Hu", "Shaan Appel", "Edward Liu",
             "Wilbur Shi", "Young Lin", "Abhinav Koppu", "Abhishek Mangla  Akkshay Khoslaa",
-            "Ally Koo", "Andy Wang", "Aneesh Jindal", "Anisha Salunkhe", "Aparna Krishnan",
-            "Ashwin Vaidyanathan", "Cody Hsieh", "Jeffrey Zhang", "Justin Kim",
-            "Krishnan Rajiyah", "Lisa Lee", "Peter Schafhalter", "Sahil Lamba", "Sameer Suresh",
-            "Sirjan Kafle", "Tarun Khasnavis", "Billy Lu", "Aayush Tyagi", "Ben Goldberg",
-            "Candice Ye", "Eliot Han", "Emaan Hariri", "Jessica Chen", "Katharine Jiang",
-            "Kedar Thakkar", "Leon Kwak", "Mohit Katyal", "Rochelle Shen", "Sayan Paul",
-            "Sharie Wang", "Shreya Reddy", "Shubham Goenka", "Victor Sun", "Vidya Ravikumar"};
+            "Andy Wang", "Aneesh Jindal", "Anisha Salunkhe", "Ashwin Vaidyanathan", "Cody Hsieh",
+            "Jeffrey Zhang", "Justin Kim", "Krishnan Rajiyah", "Lisa Lee", "Peter Schafhalter",
+            "Sahil Lamba", "Sameer Suresh", "Sirjan Kafle", "Tarun Khasnavis", "Billy Lu",
+            "Aayush Tyagi", "Ben Goldberg", "Candice Ye", "Eliot Han", "Emaan Hariri",
+            "Jessica Chen", "Katharine Jiang", "Kedar Thakkar", "Leon Kwak", "Mohit Katyal",
+            "Rochelle Shen", "Sayan Paul", "Sharie Wang", "Shreya Reddy", "Shubham Goenka",
+            "Victor Sun", "Vidya Ravikumar"};
     String[] imageNames;
     CountDownTimer count;
 
